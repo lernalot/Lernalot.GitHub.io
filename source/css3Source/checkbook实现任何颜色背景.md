@@ -1,4 +1,4 @@
-###使用css实现checkbox修改背景色
+### 使用css实现checkbox修改背景色
 
    有些时候需要用到checkbook的其他颜色背景，如果用原生的checkbook会觉得比较没有视觉美感，所以分享一种实现checkbox里面增加任何背景任何图片的点击。
 先贴上html：
@@ -26,7 +26,9 @@
 ```
     从中可以看出，关键的代码是：-webkit-appearance: none;，这句代码对于移动端绝大部分的浏览器，Android，iOS的移动端浏览器都以webkit为内核
 兼容，这句代码主要作用就是取消了当前元素的默认样式，我们要实现checkbook的选中状态为其他背景色：所以就跟上了代码：
-     .agree-confirm:checked{background-color: #18b4ed; border: none;}
+```css
+   .agree-confirm:checked{background-color: #18b4ed; border: none;}
+```
 
     而要保证被选中之前背景色为透明，则就是用css：background-color: inherit; 跟随父级颜色即可。
     最后看伪类元素：
