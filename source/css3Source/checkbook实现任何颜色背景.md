@@ -1,11 +1,13 @@
-有些时候需要用到checkbook的其他颜色背景，如果用原生的checkbook会觉得比较没有视觉美感，所以分享一种实现checkbox里面增加任何背景任何图片的点击。
+###使用css实现checkbox修改背景色
+
+   有些时候需要用到checkbook的其他颜色背景，如果用原生的checkbook会觉得比较没有视觉美感，所以分享一种实现checkbox里面增加任何背景任何图片的点击。
 先贴上html：
 ```html
 
 <input type="checkbox" class="agree-confirm agree-content" checked="true" id="agree-check">
 ```
 
-跟上css：
+   跟上css：
 ```css
 .agree-confirm{width: 13px;height: 13px;-webkit-appearance: none; background-color: inherit; border:1px solid #18b4ed; border-radius: 3px;}
 .agree-confirm:checked:before {
@@ -22,10 +24,10 @@
 .agree-content{position: absolute; top: 14px;right: 133px; transition: background-color ease 0.2s;}
 .next-step .login-next{height: 44px; border-radius: 7px;}
 ```
-从中可以看出，关键的代码是：-webkit-appearance: none;，这句代码对于移动端绝大部分的浏览器，Android，iOS的移动端浏览器都以webkit为内核
+    从中可以看出，关键的代码是：-webkit-appearance: none;，这句代码对于移动端绝大部分的浏览器，Android，iOS的移动端浏览器都以webkit为内核
 兼容，这句代码主要作用就是取消了当前元素的默认样式，我们要实现checkbook的选中状态为其他背景色：所以就跟上了代码：
-.agree-confirm:checked{background-color: #18b4ed; border: none;}
+     .agree-confirm:checked{background-color: #18b4ed; border: none;}
 
-而要保证被选中之前背景色为透明，则就是用css：background-color: inherit; 跟随父级颜色即可。
-最后看伪类元素：
-通过定位，我们可以实现对伪类元素进行背景图片设置，然后就可以实现被选中状态图片显示，仅仅通过css就可以实现交互。
+    而要保证被选中之前背景色为透明，则就是用css：background-color: inherit; 跟随父级颜色即可。
+    最后看伪类元素：
+    通过定位，我们可以实现对伪类元素进行背景图片设置，然后就可以实现被选中状态图片显示，仅仅通过css就可以实现交互。
