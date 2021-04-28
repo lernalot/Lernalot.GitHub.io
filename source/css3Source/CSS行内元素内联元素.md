@@ -1,39 +1,4 @@
-
-
-> Email-style angle brackets
-> are used for blockquotes.
-
-> > And, they can be nested.
-
-> #### Headers in blockquotes
-> 
-> * You can quote a list.
-> * Etc.
-
-*   Abacus
-    * answer
-*   Bubbles
-    1.  bunk
-    2.  bupkis
-        * BELITTLER
-    3. burper
-*   Cunning
-
-1.  Foo
-2.  Bar
-
-*   A list item.
-
-    With multiple paragraphs.
-
-*   Bar
-
-* * *
-
-## [This is an example](id:anchor1)
-Click this [link](#anchor1) in the Preview view will auto scroll to the place of the destination anchor.
-
-***
+#### CSS行内元素内联元素
 
 SS块级元素、内联元素概念 理解了它，CSS布局的理论都变得容易/
 
