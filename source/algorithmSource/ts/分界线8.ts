@@ -1,6 +1,3 @@
-
-
-
 const hasContain = (news: string, letter: string): boolean => {
     const newsArr: string[] = news.split("");
     const letterArr: string[] = news.split("");

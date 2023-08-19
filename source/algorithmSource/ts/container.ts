@@ -1,6 +1,4 @@
-
-// [2,2,1,1,1] [2,1,1,1] [2,2,2,1,1] [2,1,1,1] [2,2,1,1]  
-const getAns = (arr: number[]): number[][] => {
+const getContainerAns = (arr: number[]): number[][] => {
     if (!arr.length) return [];
     const ans:number[][] = [];
     let towSum: number = 0;
@@ -79,18 +77,10 @@ const getAns = (arr: number[]): number[][] => {
     return ans;
 }
 
-console.log(getAns([2,2,2,2,1,1,3,3,3]))
-console.log(getAns([2,2,2,2,1,3,3,3]))
-console.log(getAns([2,2,1,1,1,1,3,3,3]))
-console.log(getAns([3,3,3]))
-console.log(getAns([2,2,2,2,3,3,3]))
-console.log(getAns([1,1,1,3,3,3]))
-console.log(getAns([1,1,1,1,1,1]))
-console.log(getAns([]))
-console.log(getAns([1,1,1,1,2,2,2]))
+console.log(getContainerAns([2,2,2,2,1,1,3,3,3]))
 
 const toBe = (arr: number[], res: number[][]):boolean => {
-    const findRes = getAns(arr);
+    const findRes = getContainerAns(arr);
     let toBe = true;
     findRes.forEach((s, index) => {
         if (s.toString() != findRes[index].toString()) {

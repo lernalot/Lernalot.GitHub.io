@@ -3,7 +3,7 @@
  * 
  */
 
-const getRes = (cakes: number[], gifts: number[], money: number): number => {
+const getBirRes = (cakes: number[], gifts: number[], money: number): number => {
     let ans = 0;
     const sortGift = gifts.sort((a, b) => a - b);
     for(let i = 0; i < cakes.length; i++) {
@@ -47,4 +47,4 @@ const findGiftIndex = (gifts: number[], gift: number): number => {
 }
 
 
-console.log(getRes([10, 20, 5], [5,5,2], 15))
+console.log(getBirRes([10, 20, 5], [5,5,2], 15))

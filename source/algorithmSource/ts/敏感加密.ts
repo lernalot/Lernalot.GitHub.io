@@ -1,8 +1,3 @@
-
-
-
-
-
 const getRes = (index: number, str: string):string => {
     let changeStr = '';
     const stack: string[] = []
