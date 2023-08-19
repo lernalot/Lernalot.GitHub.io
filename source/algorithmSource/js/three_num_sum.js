@@ -1,5 +1,3 @@
-#### 三数之和-二叉树路径
-```javascript 
 var threeSum = function(nums) {
     let ans = [];
     const len = nums.length;
@@ -26,23 +24,4 @@ var threeSum = function(nums) {
     return ans;
 };
 
-
-var binaryTreePaths = function(root) {
-    const paths = [];
-    const construct_paths = (root, path) => {
-        if (root) {
-            path += root.val.toString();
-            if (root.left === null && root.right === null) { // 当前节点是叶子节点
-                paths.push(path); // 把路径加入到答案中
-            } else {
-                path += "->"; // 当前节点不是叶子节点，继续递归遍历
-                construct_paths(root.left, path);
-                construct_paths(root.right, path);
-            }
-        }
-    }
-    construct_paths(root, "");
-    return paths;
-};
-
-```
+console.log(threeSum([-2,0,1,-1,1,1]))
