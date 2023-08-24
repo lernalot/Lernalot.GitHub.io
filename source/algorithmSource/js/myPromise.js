@@ -14,7 +14,6 @@ class MyPromise {
             if (this.status == this.PENDING) {
                 this.value = res;
                 this.status = this.FULLFILLED;
-                console.log(this.onFullfilled_stack.length)
                 this.onFullfilled_stack.forEach(onFullfilled => {
                     onFullfilled(res);
                 })
@@ -48,7 +47,6 @@ class MyPromise {
         onFullfilled = typeof onFullfilled === "function" ? onFullfilled: (value) => value;
         onRejected = typeof onRejected === "function" ? onRejected: (reason) => { throw reason };
         // 判断状态
-        console.log(this.status)
         if (this.status === this.PENDING) {
             const promise2 = new MyPromise((resolve, reject) => {
                     this.onFullfilled_stack.push(() => {
@@ -107,3 +105,13 @@ class MyPromise {
 module.exports = {
     MyPromise
 }
+
+const pro = new MyPromise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(1)
+    }, 1000);
+})
+pro.then((res) => {
+    console.log(res)
+    console.log(2)
+})
