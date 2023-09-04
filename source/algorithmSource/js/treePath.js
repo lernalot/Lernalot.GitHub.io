@@ -15,3 +15,58 @@ var binaryTreePaths = function(root) {
     construct_paths(root, "");
     return paths;
 };
+
+
+const getPath = (root) => {
+    const paths = [];
+    const path_recover = (node, paths) => {
+        if (!node) return;
+        let path = node.val.toString();
+        if (node.left === null && node.right === null) {
+            paths.push(path)
+        } else {
+            path = "=>";
+            path_recover(node.left, paths);
+            path_recover(node.right, paths);
+        }
+    }
+
+    path_recover(root, paths);
+    return paths;
+}
+
+
+const obj = {
+    left: {
+        val: 1,
+        left: {
+            left: {
+                val: 1
+            },
+            right: {
+                val: 2
+            }
+        },
+        right: {
+            left: {
+                left: {
+                    val: 3
+                },
+                right: {
+                    val: 4
+                }
+            },
+            right:  {
+                left: {
+                    val: 5,
+                    left: {
+                        val: 7
+                    }
+                },
+                right: {val: 7}
+            }
+        },
+    },
+}
+
+console.log(getPath(obj))
